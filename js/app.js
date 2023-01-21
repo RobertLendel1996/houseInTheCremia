@@ -5862,7 +5862,9 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             modules_flsModules.gallery = galleyItems;
         }
-        window.onload = function() {
+        window.addEventListener("load", documentActions);
+        function documentActions() {
+            document.documentElement.classList.add("loaded");
             const furniture = document.querySelector(".gallery__body");
             if (furniture && !isMobile.any()) {
                 const furnitureItems = document.querySelector(".gallery__items");
@@ -5923,7 +5925,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     animOnScroll();
                 }), 300);
             }
-        };
+        }
         window["FLS"] = true;
         isWebp();
         menuInit();
